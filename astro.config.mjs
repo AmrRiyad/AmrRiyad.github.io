@@ -4,7 +4,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 // Replace 'your-username' with your actual GitHub username
-const GITHUB_USERNAME = 'KhaledR57';
+const GITHUB_USERNAME = 'AmrRiyad7';
 const REPO_NAME = 'verdant-virgo';
 
 // https://astro.build/config
