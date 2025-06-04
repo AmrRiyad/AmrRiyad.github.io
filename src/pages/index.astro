@@ -7,7 +7,6 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import "../styles/home-page.css";
 import { projects } from "../data/project-data.js";
-import { blogTags } from "../data/tag-data.js";
 
 // Get all blog posts sorted by publication date
 const posts = (await getCollection("blog")).sort(
@@ -55,18 +54,17 @@ const posts = (await getCollection("blog")).sort(
           <pre class="code-content"><code><span class="syntax-bracket">{</span>
           <span class="key">"name"</span>: <span class="string">"Amr Riyad"</span>,
           <span class="key">"title"</span>: <span class="string">"Software Engineer"</span>,
-          <span class="key">"skills"</span>: <span class="syntax-bracket">[</span>
-            <span class="string">"Backend Development"</span>,
-            <span class="string">"System Design"</span>,
-            <span class="string">"API Development"</span>,
-            <span class="string">"Database Design"</span>
+          <span class="key">"contact"</span>: <span class="string">"amrriyad.dev@gmail.com"</span>
+          <span class="key">"interests"</span>: <span class="syntax-bracket">[</span>
+            <span class="string">"Linux"</span>,
+            <span class="string">"Back-End"</span>,
+            <span class="string">"Open-Source"</span>
           <span class="syntax-bracket">]</span>,
           <span class="key">"languages"</span>: <span class="syntax-bracket">[</span>
             <span class="string">"TypeScript"</span>,
             <span class="string">"Python"</span>,
             <span class="string">"Ruby"</span>
           <span class="syntax-bracket">]</span>,
-          <span class="key">"contact"</span>: <span class="string">"amrriyad.dev@gmail.com"</span>
           <span class="syntax-bracket">}</span></code></pre>
         </div>
       </div>
