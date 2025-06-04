@@ -1,6 +1,6 @@
 ---
 title: "Binary Indexed Tree"
-description: "Learn how to get started with Binary Indexed Tree and why it's becoming a popular choice for content-focused websites."
+description: "Learn how a Binary Indexed Tree (Fenwick Tree) works to handle prefix sums and updates efficiently in logarithmic time. This guide breaks down the structure, logic, and implementation with visual examples and code."
 pubDate: "June 4 2025"
 heroImage: "/bit-3 (1).png"
 tags: ["bit", "data-structure", "tutorials"]
