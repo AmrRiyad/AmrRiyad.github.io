@@ -1,0 +1,157 @@
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    transition: color var(--transition-speed) ease;
+}
+.page-header p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    transition: color var(--transition-speed) ease;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+.project-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+                background-color var(--transition-speed) ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow);
+}
+.project-card:nth-child(even) {
+    direction: rtl;
+}
+.project-card:nth-child(even) .project-content {
+    direction: ltr;
+}
+.project-image {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+}
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+.project-content {
+    display: flex;
+    flex-direction: column;
+}
+.project-content h2 {
+    font-size: 1.8rem;
+    margin: 0 0 1rem 0;
+    color: var(--text-color);
+    transition: color var(--transition-speed) ease;
+}
+.project-content p {
+    margin: 0 0 1.5rem 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    flex-grow: 1;
+    transition: color var(--transition-speed) ease;
+}
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.project-tag {
+    background: var(--tag-bg);
+    color: var(--tag-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color var(--transition-speed) ease,
+                color var(--transition-speed) ease;
+}
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+.live-link {
+    background-color: var(--accent-color);
+    color: white;
+}
+.live-link:hover {
+    background-color: var(--accent-color-hover);
+}
+.github-link {
+    background-color: var(--bg-tertiary);
+    color: var(--text-color);
+}
+.github-link:hover {
+    background-color: var(--hover-bg);
+}
+.github-icon {
+    width: 18px;
+    height: 18px;
+}
+
+@media (max-width: 768px) {
+    .project-card, .project-card:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+    .project-content, .project-card:nth-child(even) .project-content {
+        direction: ltr;
+    }
+    .project-image {
+        height: 250px;
+    }
+}
+.projects-section {
+    padding: 1rem;
+    transition: background-color var(--transition-speed) ease;
+}
+/* Commented out code from original file
+.projects-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    transition: color var(--transition-speed) ease;
+}	
+.projects-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    transition: color var(--transition-speed) ease;
+} */ 

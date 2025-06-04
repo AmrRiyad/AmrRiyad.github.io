@@ -1,0 +1,116 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import "../styles/home-page.css";
+import { projects } from "../data/project-data.js";
+import { blogTags } from "../data/tag-data.js";
+
+// Get all blog posts sorted by publication date
+const posts = (await getCollection("blog")).sort(
+  (a, b) => (b.data.pubDate?.valueOf() ?? 0) - (a.data.pubDate?.valueOf() ?? 0)
+);
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <section class="hero">
+      <div class="geometric-background">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-info">
+          <div class="hero-eyebrow">Software Engineer</div>
+          <h1 class="hero-title">
+            I'm <span class="highlight">Amr Riyad</span>
+          </h1>
+          <p class="hero-subtitle">
+            Specializing in Backend Development and Building Scalable Solutions
+          </p>
+          <div class="hero-buttons">
+            <a href="/about" class="btn-primary">About Me</a>
+            <a href="/projects" class="btn-secondary">View Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="projects-section">
+      <h2 id="projects" class="section-title">My Projects</h2>
+      <div class="projects-grid">
+        {
+          projects.map((project) => (
+            <div class="project-card">
+              <img src={project.image} alt={project.title} />
+              <div class="project-content">
+                <h3>{project.title}</h3>
+                <div class="project-tags">
+                  {project.tags.map((tag) => (
+                    <span class="project-tag">{tag}</span>
+                  ))}
+                </div>
+                <p>{project.shortDescription}</p>
+                <a
+                  href={`/projects#${project.title.toLowerCase().replace(/\s+/g, "-")}`}
+                  class="project-link"
+                >
+                  View Project →
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="section-divider"></div>
+
+      <section class="featured-posts">
+        <h2 class="section-title">Latest Blog Posts</h2>
+        <div class="posts-grid">
+          {
+            posts.slice(0, 3).map((post) => (
+              <a href={`/blog/${post.id}/`} class="post-card">
+                <img src={post.data.heroImage} alt={post.data.title} />
+                <div class="post-content">
+                  <h3>{post.data.title}</h3>
+                  <span class="date">
+                    {post.data.pubDate && (
+                      <FormattedDate date={post.data.pubDate} />
+                    )}
+                  </span>
+                  <p>{post.data.description}</p>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="topics">
+        <h2>Topics I Write About</h2>
+        <div class="topics-list">
+          {
+            blogTags.map((tag) => (
+              <a href={`/blog/tag/${tag}`} class="topic-tag">
+                {tag}
+              </a>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+    <Footer />
+  </body>
+</html>

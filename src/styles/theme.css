@@ -1,0 +1,140 @@
+:root {
+  /* Dark theme (default) */
+  --bg-color: #0f1119;
+  --bg-secondary: #171925;
+  --bg-tertiary: #1e2030;
+  --text-color: #e0e0e0;
+  --text-secondary: #aaaaaa;
+  --accent-color: #7c6bff;
+  --accent-color-hover: #9a8dff;
+  --accent-gradient: linear-gradient(45deg, #7c6bff, #e17cea);
+  --border-color: #2a2e3d;
+  --card-bg: #171925;
+  --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  --tag-bg: #1e2030;
+  --tag-color: #9a8dff;
+  --hover-bg: rgba(124, 107, 255, 0.15);
+  --header-bg: rgba(15, 17, 25, 0.85);
+  --header-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  --button-secondary-bg: transparent;
+  --button-secondary-color: #9a8dff;
+  --button-secondary-border: #9a8dff;
+  --divider-color: #2a2e3d;
+  --transition-speed: 0.3s;
+  --overlay-opacity: 0.07;
+}
+
+html.light {
+  /* Light theme */
+  --bg-color: #f8f9fc;
+  --bg-secondary: #f1f3fa;
+  --bg-tertiary: #e9ecf6;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --accent-color: #4f39fa;
+  --accent-color-hover: #3b27d1;
+  --accent-gradient: linear-gradient(45deg, #4f39fa, #da62c4);
+  --border-color: #e1e5ee;
+  --card-bg: #ffffff;
+  --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+  --tag-bg: #f0f0ff;
+  --tag-color: #4f39fa;
+  --hover-bg: rgba(79, 57, 250, 0.1);
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --header-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  --button-secondary-bg: transparent;
+  --button-secondary-color: #4f39fa;
+  --button-secondary-border: #4f39fa;
+  --divider-color: #dddddd;
+  --transition-speed: 0.3s;
+  --overlay-opacity: 0.03;
+}
+
+/* Apply smooth transition when theme changes */
+html {
+  transition: background-color var(--transition-speed) ease;
+}
+
+body {
+  transition: background-color var(--transition-speed) ease, 
+              color var(--transition-speed) ease;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  position: relative;
+}
+
+/* Add tech-inspired background pattern */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(var(--accent-color) 2px, transparent 2px),
+    radial-gradient(var(--accent-color) 1px, transparent 1px);
+  background-size: 50px 50px, 25px 25px;
+  background-position: 0 0, 25px 25px;
+  opacity: var(--overlay-opacity);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Add subtle gradient overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+                 rgba(124, 107, 255, 0.05) 0%, 
+                 rgba(15, 17, 25, 0) 50%, 
+                 rgba(124, 107, 255, 0.05) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+html.light body::after {
+  background: linear-gradient(135deg, 
+                 rgba(79, 57, 250, 0.05) 0%, 
+                 rgba(248, 249, 252, 0) 50%, 
+                 rgba(79, 57, 250, 0.05) 100%);
+}
+
+/* Force light mode styles */
+html.light body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+html.light header {
+  background-color: var(--header-bg);
+  box-shadow: var(--header-shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Apply backdrop filter to header */
+header {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Make sure all text uses the correct color in light mode */
+html.light h1, 
+html.light h2, 
+html.light h3, 
+html.light h4, 
+html.light h5, 
+html.light h6 {
+  color: var(--text-color);
+}
+
+html.light p {
+  color: var(--text-secondary);
+} 

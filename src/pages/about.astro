@@ -1,0 +1,237 @@
+---
+import Layout from "../layouts/BlogPost.astro";
+import "../styles/about-page.css";
+---
+
+<Layout
+  title="About Me"
+  description="Learn more about Amr Riyad - Software Engineer"
+  tags={[]}
+>
+  <div class="bio-section">
+    <h2>Hello, I'm Amr Riyad</h2>
+    <p class="bio-intro">
+      A Software Engineer passionate about creating efficient, scalable backend
+      solutions. I thrive on solving complex problems and building systems that
+      make a difference.
+    </p>
+  </div>
+
+  <div class="timeline-section">
+    <h2>My Journey</h2>
+
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <h3>
+          Software Engineer <span class="company"
+            >@ <a
+              href="https://alsun.ai/"
+              target="_blank"
+              style="text-decoration: none;">Alsun AI</a
+            ></span
+          >
+        </h3>
+        <p class="timeline-period">May 2025 - Current</p>
+        <p class="timeline-description">TBC</p>
+        <div class="tech-used">
+          <span>Python</span>
+          <span>React</span>
+          <span>Docker</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <h3>
+          Software Engineer <span class="company"
+            >@ <a
+              href="https://yomaak.com/"
+              target="_blank"
+              style="text-decoration: none;">Yomaak</a
+            ></span
+          >
+        </h3>
+        <p class="timeline-period">January 2025 - May 2025</p>
+        <p class="timeline-description">
+          Migrated WordPress website to a Fastify/React/Tailwind stack,
+          enhancing platform performance and scalability. Integrated Stripe's
+          API to automate subscription billing and recurring payments,
+          streamlining invoicing.
+        </p>
+        <div class="tech-used">
+          <span>React</span>
+          <span>Fastify</span>
+          <span>Tailwind</span>
+          <span>Stripe</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <h3>
+          Back End Developer <span class="company"
+            >@ <a
+              href="https://www.instabug.com/"
+              target="_blank"
+              style="text-decoration: none;">Instabug</a
+            ></span
+          >
+        </h3>
+        <p class="timeline-period">July 2024 - September 2024</p>
+        <p class="timeline-description">
+          Optimized the Jenkins CI/CD backend pipeline by enabling concurrent
+          execution of test specs, reducing overall execution time by 60%.
+          Enhanced the Ruby on Rails test suite, cutting test execution time by
+          20%. Implemented auto-deletion of expired documents to optimize
+          storage.
+        </p>
+        <div class="tech-used">
+          <span>Ruby on Rails</span>
+          <span>Jenkins</span>
+          <span>CI/CD</span>
+          <span>MySQL</span>
+          <span>Redis</span>
+          <span>Docker</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <h3>
+          Computer Science Degree <span class="company">@ Cairo University</span
+          >
+        </h3>
+        <p class="timeline-period">September 2020 - June 2025</p>
+        <p class="timeline-description">
+          Bachelor of Computer Science from the Faculty of Computers and
+          Artificial Intelligence.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="achievements-section">
+    <h2>Recognition & Open Source</h2>
+    <div class="achievement-cards">
+      <div class="achievement-card">
+        <a
+          href="https://icpc.global/ICPCID/S0FHPJBI2OJR"
+          target="_blank"
+          class="achievement-card-link"
+        >
+          <h3>ICPC</h3>
+          <p>Qualified for the 2023 ACPC Finals in Egypt.</p>
+        </a>
+      </div>
+
+      <div class="achievement-card">
+        <a
+          href="https://github.com/sqlancer/sqlancer/issues?q=is%3Apr%20author%3A%40me%20state%3Amerged"
+          target="_blank"
+          class="achievement-card-link"
+        >
+          <h3>SQLancer</h3>
+          <p>
+            I contributed to an open-source tool called SQLancer, which is used
+            for automated testing of database management systems to detect bugs.
+          </p>
+        </a>
+      </div>
+
+      <div class="achievement-card">
+        <a
+          href="https://facebook.com/codingcompetitions/hacker-cup/2022/certificate/433728468200425"
+          target="_blank"
+          class="achievement-card-link"
+        >
+          <h3>Meta Hacker Cup</h3>
+          <p>
+            Reached Round 2 of the Meta Hacker Cup 2022, an international
+            competitive programming competition organized by Meta (formerly
+            Facebook).
+          </p>
+        </a>
+      </div>
+
+      <div class="achievement-card">
+        <a
+          href="https://www.facebook.com/icpcfcaicu"
+          target="_blank"
+          class="achievement-card-link"
+        >
+          <h3>ICPC FCAI-CU</h3>
+          <p>
+            Led training for 1,000+ students in competitive programming,
+            mentored 200+ in data structures and algorithms using C++, and
+            served as a problem setter and judge for ECPC.
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="skills-section">
+    <h2>Coding Spellbook</h2>
+
+    <div class="skills-container">
+      <div class="skill-category">
+        <h4>Languages</h4>
+        <hr />
+        <div class="skill-tags">
+          <span>Python</span>
+          <span>C/C++</span>
+          <span>Ruby</span>
+          <span>Golang</span>
+          <span>SQL</span>
+          <span>TypeScript</span>
+          <span>HTML/CSS</span>
+          <span>Dart</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h4>Frameworks</h4>
+        <hr />
+        <div class="skill-tags">
+          <span>Fastify</span>
+          <span>React</span>
+          <span>Ruby on Rails</span>
+          <span>Django</span>
+          <span>FastAPI</span>
+          <span>Flutter</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h4>Technologies</h4>
+        <hr />
+        <div class="skill-tags">
+          <span>Docker</span>
+          <span>Redis</span>
+          <span>Elasticsearch</span>
+          <span>Jenkins</span>
+          <span>Git</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h4>Core Skills</h4>
+        <hr />
+        <div class="skill-tags">
+          <span>RESTful APIs</span>
+          <span>Algorithms</span>
+          <span>OOP</span>
+          <span>Design Patterns</span>
+          <span>Databases</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

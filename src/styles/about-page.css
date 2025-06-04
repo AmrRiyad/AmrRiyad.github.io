@@ -1,0 +1,224 @@
+.bio-section {
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+.bio-intro {
+	font-size: 1.3rem;
+	line-height: 1.6;
+	max-width: 800px;
+	margin: 0 auto;
+	color: var(--text-secondary);
+}
+
+.timeline-section {
+	position: relative;
+	margin: 4rem 0;
+}
+
+.timeline-section::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 10px;
+	width: 2px;
+	background: var(--border-color);
+}
+
+.timeline-item {
+	position: relative;
+	padding-left: 40px;
+	margin-bottom: 3rem;
+}
+
+.timeline-marker {
+	position: absolute;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: var(--accent-color);
+	border: 4px solid var(--bg-color);
+	top: 0;
+}
+
+.timeline-content h3 {
+	margin-bottom: 0.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.5rem;
+}
+
+.company {
+	font-weight: normal;
+	color: var(--accent-color);
+}
+
+.timeline-period {
+	font-size: 0.9rem;
+	color: var(--text-secondary);
+	margin-bottom: 1rem;
+}
+
+.timeline-description {
+	margin-bottom: 1rem;
+	line-height: 1.6;
+}
+
+.tech-used {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.tech-used span {
+	background: var(--tag-bg);
+	color: var(--tag-color);
+	padding: 0.2rem 0.6rem;
+	border-radius: 1rem;
+	font-size: 0.75rem;
+}
+
+.skills-section {
+	margin: 4rem 0;
+}
+
+.skills-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 2rem;
+}
+
+.skill-category h3 {
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 2px solid var(--border-color);
+}
+
+.skill-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.skill-tags span {
+	background: var(--tag-bg);
+	color: var(--tag-color);
+	padding: 0.25rem 0.75rem;
+	border-radius: 2rem;
+	font-size: 0.875rem;
+}
+
+.achievements-section {
+	margin: 4rem 0;
+}
+
+.achievement-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+.achievement-card {
+	background: var(--card-bg);
+	border-radius: 0.5rem;
+	padding: 1.5rem;
+	box-shadow: var(--card-shadow);
+	transition: transform 0.3s ease;
+	border: 1px solid var(--border-color);
+}
+
+.achievement-card:hover {
+	transform: translateY(-5px);
+}
+
+.achievement-card h3 {
+	margin-bottom: 0.75rem;
+	color: var(--accent-color);
+}
+
+.achievement-card p {
+	color: var(--text-secondary);
+	line-height: 1.5;
+}
+
+.connect-section {
+	margin: 4rem 0 2rem;
+	text-align: center;
+}
+
+.social-links {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	margin-top: 2rem;
+}
+
+.social-link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	text-decoration: none;
+	color: var(--text-color);
+	transition: color 0.2s ease;
+}
+
+.social-link:hover {
+	color: var(--accent-color);
+}
+
+.social-link svg {
+	transition: transform 0.2s ease;
+}
+
+.social-link:hover svg {
+	transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+	.skills-container {
+		grid-template-columns: 1fr;
+	}
+	
+	.achievement-cards {
+		grid-template-columns: 1fr;
+	}
+	
+	.social-links {
+		flex-wrap: wrap;
+	}
+}
+
+/* Hide footer on about page */
+:global(footer) {
+	display: none !important;
+}
+
+/* Remove top padding from main */
+:global(main) {
+	padding-top: 0 !important;
+}
+
+.achievement-card-link {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
+
+.achievement-card-link:hover .achievement-card {
+	border-color: var(--accent);
+}
+
+.project-link {
+	display: inline-block;
+	margin-top: 0.5rem;
+	color: var(--accent);
+}
+
+.project-link:hover {
+	text-decoration: underline;
+} 
