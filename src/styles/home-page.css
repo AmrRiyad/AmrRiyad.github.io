@@ -201,6 +201,95 @@
     box-shadow: inset 0 0 0 2px var(--text-color);
 }
 
+/* Code Snippet Styling */
+.code-snippet {
+    background-color: #1e1e2e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    transform: rotate(2deg);
+    transition: transform 0.3s ease;
+}
+
+.code-snippet:hover {
+    transform: rotate(0deg) translateY(-5px);
+}
+
+.code-header {
+    background-color: #2a2a3c;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #3a3a4c;
+}
+
+.code-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.code-dot:nth-child(1) {
+    background-color: #ff5f57;
+}
+
+.code-dot:nth-child(2) {
+    background-color: #febc2e;
+}
+
+.code-dot:nth-child(3) {
+    background-color: #28c840;
+}
+
+.code-title {
+    margin-left: 10px;
+    color: #a9b1d6;
+    font-size: 0.85rem;
+}
+
+.code-content {
+    padding: 1.5rem;
+    margin: 0;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+.code-content code {
+    display: block;
+    white-space: pre;
+}
+
+/* JSON syntax highlighting */
+.code-content .string { color: #9ece6a; }
+.code-content .number { color: #ff9e64; }
+.code-content .boolean { color: #7dcfff; }
+.code-content .null { color: #bb9af7; }
+.code-content .key { color: #f7768e; }
+.code-content .syntax-bracket { color: #89ddff; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .code-snippet {
+        margin: 0 auto;
+        transform: none;
+    }
+    
+    .code-snippet:hover {
+        transform: translateY(-5px);
+    }
+}
+
 .technical-element {
     position: relative;
     width: 100%;
